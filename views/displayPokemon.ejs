@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/displayPokemon.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -9,8 +10,6 @@
     <h1>Pokemon</h1>
     <%- include('partials/nav-bar.ejs')%>
     <br>
-
-    <input type="text">
 
     <h2><b>Name:</b> <%= name %></h2>
 
@@ -26,6 +25,6 @@
     <p><b>ID:</b> <%= id %></p>
 
 
-    <a href="/displayPokemon" style="display: block; margin-top: 20px;">Display Pokémon</a>
+    <a href="/pokemonSearch" style="display: block; margin-top: 20px;">Search For Another Pokemon</a>
 </body>
 </html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/displayPokemon.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Display</title>
+</head>
+<body>
+    <h1>Pokémon</h1>
+    <%- include('partials/nav-bar.ejs')%>
+    <br>
+    <h2><%= name.toUpperCase() %></h2>
+
+    <img src="<%= sprite %>" alt="<%= name %>" width="25%">
+    <h3>Category: <%= category %></h3>
+    <h3>Cost: <%= cost %> PokéDollars</h3>
+    <p><strong>Effect:</strong> <%= effect %></p>
+
+    <a href="/itemSearch">Search another item</a>
+    
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/pokemonSearch.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Search</title>
+</head>
+<body>
+    <h1>Pokémon</h1>
+    <%- include('partials/nav-bar.ejs') %>
+    <br>
+
+    <form action="/getItem" method="GET">
+        <label for="itemInput">Enter Item Name or ID:</label>
+        <input type="text" id="itemInput" name="itemInput" placeholder="ex: potion or 1"><br><br>
+        <button type="submit">Get Item</button>
+    </form>
+</body>
+</html>
