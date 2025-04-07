@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pokemon</h1>
+    <%- include('partials/nav-bar.ejs')%>
+    <br>
+
+    <input type="text">
+
+    <h2><b>Name:</b> <%= name %></h2>
+
+    <p><b>Non-Shiny Variation</b></p>
+    <img src="<%= sprite %>" alt="<%= name %>" width="50%">
+    <p><b>Shiny Variation</b></p>
+    <img src="<%= shiny %>" alt="<%= name %>" width="50%">
+
+    <p><b>Type(s):</b> <%= types.join(', ') %></p>
+    <p><b>Weight:</b> <%= weight %> lbs</p>
+    <p><b>Height:</b> <%= height %> inches</p>
+    <p><b>Base XP:</b> <%= base_xp %> xp</p>
+    <p><b>ID:</b> <%= id %></p>
+
+
+    <a href="/displayPokemon" style="display: block; margin-top: 20px;">Display Pokémon</a>
+</body>
+</html>

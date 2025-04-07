@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="/home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokemon</title>
@@ -8,7 +9,12 @@
 <body>
     <div class="content">
         <h1>Pokemon</h1>
-        <img src="/public/images/pokemon.jpg" alt="Ash With Pokemon">
+        <%- include('partials/nav-bar.ejs')%>
+        <br>
+
+        <img src="/images/pokemon.jpg" alt="Ash With Pokemon" width="50%">
+        <p>Get a random pokemon and learn about them, or find a pokemon on your own! <br>
+            You can also look up different items!</p>
 
     </div>
     

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Search</title>
+</head>
+<body>
+    <h1>Pokemon</h1>
+        <%- include('partials/nav-bar.ejs')%>
+       <br>
+
+       <form action="/getPokemon" method="GET">
+        <label for="pokemonInput">Enter Pokémon Name or ID:</label>
+        <input type="text" id="pokemonInput" name="pokemonInput" placeholder="e.g. Pikachu or 25" required>
+        <button type="submit">Get Pokémon</button>
+    </form>
+
+
+        <a href="/displayPokemon" style="display: block; margin-top: 20px;">Display Pokémon</a>
+    
+</body>
+</html>

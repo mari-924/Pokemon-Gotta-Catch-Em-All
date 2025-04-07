@@ -19,6 +19,8 @@ app.get('/', async (req, res) => {
     let response = await fetch(url);
     let data = await response.json();
 
+    console.log(data.sprites.front_default);
+
     res.render('home', {
         name: randomPokemonName,
         sprite: data.sprites.front_default,
@@ -26,5 +28,48 @@ app.get('/', async (req, res) => {
     });
 });
 
+app.get('/RandomPokemon', async (req, res) => {
+    const randomPokemonName = pokemon.random();
+    let url = 'https://pokeapi.co/api/v2/pokemon/' + randomPokemonName.toLowerCase();
+    let response = await fetch(url);
+    let data = await response.json();
+
+    console.log(data);
+
+    res.render('randomPokemon', {
+        name: randomPokemonName,
+        sprite: data.sprites.front_default,
+        types: data.types.map(t => t.type.name),
+        shiny: data.sprites.front_shiny,
+        weight: data.weight,
+        height: data.height,
+        base_xp: data.base_experience,
+        id: data.id
+    });
+});
+
+app.get('/displayPokemon', async (req, res) => {
+    const randomPokemonName = pokemon.random();
+    let url = 'https://pokeapi.co/api/v2/pokemon/' + randomPokemonName.toLowerCase();
+    let response = await fetch(url);
+    let data = await response.json();
+
+    console.log(data);
+
+    res.render('randomPokemon', {
+        name: randomPokemonName,
+        sprite: data.sprites.front_default,
+        types: data.types.map(t => t.type.name),
+        shiny: data.sprites.front_shiny,
+        weight: data.weight,
+        height: data.height,
+        base_xp: data.base_experience,
+        id: data.id
+    });
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000');
+});
 
 export default app;
