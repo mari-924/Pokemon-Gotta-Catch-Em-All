@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const pokemon = require('pokemon');
+const { default: pokemon } = await import('pokemon');
 const app = express();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -25,3 +25,6 @@ app.get('/', async (req, res) => {
         types: data.types.map(t => t.type.name)
     });
 });
+
+
+export default app;
