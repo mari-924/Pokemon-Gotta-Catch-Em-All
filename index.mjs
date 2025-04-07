@@ -48,7 +48,7 @@ app.get('/RandomPokemon', async (req, res) => {
     });
 });
 
-app.get('/displayPokemon', async (req, res) => {
+app.get('/PokemonSearch', async (req, res) => {
     const randomPokemonName = pokemon.random();
     let url = 'https://pokeapi.co/api/v2/pokemon/' + randomPokemonName.toLowerCase();
     let response = await fetch(url);
@@ -56,7 +56,7 @@ app.get('/displayPokemon', async (req, res) => {
 
     console.log(data);
 
-    res.render('randomPokemon', {
+    res.render('pokemonSearch', {
         name: randomPokemonName,
         sprite: data.sprites.front_default,
         types: data.types.map(t => t.type.name),
